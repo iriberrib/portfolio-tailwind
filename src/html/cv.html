@@ -1,0 +1,314 @@
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Profile Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Estilos para el modo oscuro */
+    .dark-mode {
+      --bg-color: #1a202c;
+      --text-color: #cbd5e0;
+      --sidebar-bg: #2d3748;
+      --sidebar-text: #a0aec0;
+      --border-color: #4a5568;
+    }
+
+    /* Custom styles for light mode */
+    .light-mode {
+      --bg-color: #f7fafc;
+      --text-color: #2d3748;
+      --sidebar-bg: #edf2f7;
+      --sidebar-text: #4a5568;
+      --border-color: #e2e8f0;
+    }
+
+    /* Apply the custom properties */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .sidebar {
+      background-color: var(--sidebar-bg);
+      color: var(--sidebar-text);
+    }
+
+    .border-custom {
+      border-color: var(--border-color);
+    }
+
+    /* Animations */
+    .sidebar a {
+      transition: border-width 0.3s, transform 0.3s;
+    }
+
+    .sidebar a:hover {
+      border-bottom-width: 2px;
+      transform: scale(1.05);
+    }
+
+    .profile-img {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icon {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilos para las tarjetas de tecnologías */
+    .skill-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 2px solid var(--border-color);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      background-color: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 150px; /* Altura uniforme para todas las tarjetas */
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-card img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 8px;
+    }
+
+    .skill-level {
+      font-size: 0.75rem;
+      color: var(--text-color);
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .skills-grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body class="light-mode">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/4 sidebar p-6 flex flex-col items-center">
+      <div class="relative">
+        <img alt="Profile picture of [Tu nombre]" class="rounded-full w-32 h-32 profile-img" src="/src/assets/profile 3.jpeg" />
+        <span class="absolute bottom-0 right-0 bg-green-500 rounded-full w-4 h-4 border-2 border-white"></span>
+      </div>
+      <nav class="mt-6 space-y-4 text-lg">
+        <a class="block" href="/src/html/indexPortfolio.html">Home</a>
+        <a class="block" href="/src/html/cv.html">CV</a>
+        <a class="block" href="../html/projects.html">Projects</a>
+        <a class="block" href="#">Blog</a>
+        <hr class="my-4 border-custom" />
+        <a class="block" href="#">Contact</a>
+      </nav>
+      <div class="mt-auto flex space-x-4">
+        <a class="text-gray-600 social-icon" href="https://github.com/iriberrib">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="text-gray-600 social-icon" href="https://www.linkedin.com/in/benjamin-iriberri/">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="w-3/4 p-12">
+      <h1 class="text-3xl font-bold mb-4">Perfil</h1>
+      <p class="mb-8">
+        Me llamo Benjamin, actualmente me desempeño como QA Analyst & Lead con 3 años de experiencia. Tengo
+        conocimientos en Testing Manual y Automatizado, además de experiencia en control de calidad de software. Estoy
+        familiarizado con los diferentes niveles de testing, que incluyen pruebas unitarias, de integración, de sistema
+        y de aceptación. He trabajado en la creación y ejecución de planes de prueba, casos de prueba detallados, así
+        como en la documentación de issues, bugs y el seguimiento de los mismos hasta su resolución.
+      </p>
+      <h2 class="text-2xl font-bold mb-4">Experiencia</h2>
+      <div class="space-y-8">
+        <div class="flex items-start">
+          <div class="w-1/12 flex justify-center">
+            <div class="w-4 h-4 bg-black rounded-full mt-1"></div>
+          </div>
+          <div class="w-11/12">
+            <h3 class="font-bold">Jr QA Analyst & Lead / Support N1 - Asteroid Technologies</h3>
+            <p class="text-sm text-gray-600">dic. 2023 - actualidad. [10 meses]</p>
+            <p>
+              Responsable del area de calidad dentro del equipo de desarrollo, encargado de la escritura, ejecución y
+              documentación de planes de prueba, casos de prueba, documentación, reporte y seguimiento de bugs,
+              encargado del area de soporte de nivel 1 del area tecnica.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <div class="w-1/12 flex justify-center">
+            <div class="w-4 h-4 bg-black rounded-full mt-1"></div>
+          </div>
+          <div class="w-11/12">
+            <h3 class="font-bold">Jr QA Analyst - Guarnic.</h3>
+            <p class="text-sm text-gray-600">mar. 2022 - nov. 2023. [1 año y 9 meses 1]</p>
+            <p>Management and monitoring of the test automation team.</p>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <div class="w-1/12 flex justify-center">
+            <div class="w-4 h-4 bg-black rounded-full mt-1"></div>
+          </div>
+          <div class="w-11/12">
+            <h3 class="font-bold">QA Automation Trainee - ComparaOnline.</h3>
+            <p class="text-sm text-gray-600">ene. 2020 - feb. 2020 [1 mes].</p>
+            <p>Automatización de Casos de prueba con Katalon Studio.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de tecnologías -->
+      <h2 class="text-2xl font-bold my-6">Skills</h2>
+      <div class="skills-grid grid grid-cols-3 gap-4">
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+          <p>HTML</p>
+          <p class="skill-level">Avanzado</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+          <p>CSS</p>
+          <p class="skill-level">Avanzado</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+          <p>JavaScript</p>
+          <p class="skill-level">Avanzado</p>
+        </div>
+        <div class="skill-card">
+          <img src="/src/assets/typescript.png" alt="TypeScript" />
+          <p>TypeScript</p>
+          <p class="skill-level">Avanzado</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+          <p>Node.js</p>
+          <p class="skill-level">Avanzado</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+          <p>MySQL</p>
+          <p class="skill-level">Basico</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+          <p>MongoDB</p>
+          <p class="skill-level">Basico</p>
+        </div>
+        <div class="skill-card">
+          <img src="../assets/Scrum logo.svg" alt="Scrum" />
+          <p>Scrum</p>
+          <p class="skill-level">Intermedio</p>
+        </div>
+        <div class="skill-card">
+          <img src="../assets/kanban.png" alt="Kanban" />
+          <p>Kanban</p>
+          <p class="skill-level">Intermedio</p>
+        </div>
+        <div class="skill-card">
+          <img src="../assets/WebdriverIO logo.png" alt="WebDriverIO" />
+          <p>WebDriverIO</p>
+          <p class="skill-level">Basico</p>
+        </div>
+        <div class="skill-card">
+          <img src="../assets/appium.png" alt="Appium" />
+          <p>Appium</p>
+          <p class="skill-level">Básico</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium" />
+          <p>Selenium</p>
+          <p class="skill-level">Basico</p>
+        </div>
+        <div class="skill-card">
+          <img src="../assets/Cucumber logo.svg" alt="Cucumber" />
+          <p>Cucumber</p>
+          <p class="skill-level">Trainee</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" />
+          <p>Postman</p>
+          <p class="skill-level">Basico</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+          <p>Git</p>
+          <p class="skill-level">Intermedio</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/playwright/playwright-original.svg" alt="Playwright" />
+          <p>Playwright</p>
+          <p class="skill-level">Intermedio</p>
+        </div>
+        <div class="skill-card">
+          <img src="../assets/cypress.svg" alt="Cypress" />
+          <p>Cypress</p>
+          <p class="skill-level">Intermedio</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion" />
+          <p>Notion</p>
+          <p class="skill-level">Avanzado</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Boton para cambiar de modo claro a oscuro y viceversa -->
+  <button class="absolute top-4 right-4 p-2 bg-gray-300 dark:bg-gray-700 rounded-full focus:outline-none" id="theme-toggle">
+    <i class="fas fa-sun text-yellow-500" id="theme-icon"></i>
+  </button>
+  <script>
+    // Javascript para cambiar de tema
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeIcon.classList.remove('text-yellow-500');
+        themeIcon.classList.add('text-gray-300');
+      } else {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        themeIcon.classList.remove('text-gray-300');
+        themeIcon.classList.add('text-yellow-500');
+      }
+    });
+  </script>
+</body>
+</html>

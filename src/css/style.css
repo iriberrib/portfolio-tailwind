@@ -1,0 +1,76 @@
+/* Estilos para el modo oscuro */
+.dark-mode {
+  @keyframes circle-in-hesitate {
+    0% {
+      clip-path: circle(0%);
+    }
+    40% {
+      clip-path: circle(40%);
+    }
+    100% {
+      clip-path: circle(125%);
+    }
+  }
+  
+  [transition-style="in:circle:hesitate"] {
+    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-hesitate both;
+    --bg-color: #1a202c;
+    --text-color: #cbd5e0;
+    --sidebar-bg: #2d3748;
+    --sidebar-text: #a0aec0;
+    --border-color: #4a5568;
+  }
+  
+}
+
+/* Custom styles for light mode */
+.light-mode {
+  --bg-color: #f7fafc;
+  --text-color: #2d3748;
+  --sidebar-bg: #edf2f7;
+  --sidebar-text: #4a5568;
+  --border-color: #e2e8f0;
+}
+
+/* Apply the custom properties */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+}
+
+.border-custom {
+  border-color: var(--border-color);
+}
+
+/* Animations */
+.sidebar a {
+  transition: border-width 0.3s, transform 0.3s;
+}
+
+.sidebar a:hover {
+  border-bottom-width: 2px;
+  transform: scale(1.05);
+}
+
+.profile-img {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icon {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,151 @@
+<!-- Codigo para todas las paginas -->
+
+<html lang="es"></html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>
+    Profile Page
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="light-mode">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/4 sidebar p-6 flex flex-col items-center">
+      <div class="relative">
+        <img alt="Profile picture of [Tu nombre]" class="rounded-full w-32 h-32" src="/src/assets/profile 3.jpeg" />
+        <span class="absolute bottom-0 right-0 bg-green-500 rounded-full w-4 h-4 border-2 border-white">
+        </span>
+      </div>
+      <nav class="mt-6 space-y-4 text-lg">
+        <a class="block" href="/src/html/indexPortfolio.html">
+          Home
+        </a>
+        <a class="block" href="/src/html/cv.html">
+          CV
+        </a>
+        <a class="block" href="./src/html/projects.html">
+          Projects
+        </a>
+        <a class="block" href="#">
+          Blog
+        </a>
+        <hr class="my-4 border-custom" />
+        <a class="block" href="#">
+          Contact
+        </a>
+      </nav>
+      <div class="mt-auto flex space-x-4">
+        <a class="text-gray-600" href="https://github.com/iriberrib">
+          <i class="fab fa-github">
+          </i>
+        </a>
+        <a class="text-gray-600" href="https://www.linkedin.com/in/benjamin-iriberri/">
+          <i class="fab fa-linkedin">
+          </i>
+        </a>
+      </div>
+    </div>
+    <!-- Main Content -->
+    
+    <!-- Boton para cambiar de modo claro a oscuro y viceversa -->
+    <button class="absolute top-4 right-4 p-2 bg-gray-300 dark:bg-gray-700 rounded-full focus:outline-none"
+      id="theme-toggle">
+      <i class="fas fa-sun text-yellow-500" id="theme-icon">
+      </i>
+    </button>
+  </div>
+  <script>
+    // Javascript para cambiar de tema
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeIcon.classList.remove('text-yellow-500');
+        themeIcon.classList.add('text-gray-300');
+      } else {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        themeIcon.classList.remove('text-gray-300');
+        themeIcon.classList.add('text-yellow-500');
+      }
+    });
+  </script>
+</body>
+
+<style>
+  /* Estilos para el modo oscuro */
+  .dark-mode {
+    --bg-color: #1a202c;
+    --text-color: #cbd5e0;
+    --sidebar-bg: #2d3748;
+    --sidebar-text: #a0aec0;
+    --border-color: #4a5568;
+  }
+
+  /* Custom styles for light mode */
+  .light-mode {
+    --bg-color: #f7fafc;
+    --text-color: #2d3748;
+    --sidebar-bg: #edf2f7;
+    --sidebar-text: #4a5568;
+    --border-color: #e2e8f0;
+  }
+
+  /* Apply the custom properties */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  .sidebar {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+  }
+
+  .border-custom {
+    border-color: var(--border-color);
+  }
+
+  /* Animations */
+  .sidebar a {
+    transition: border-width 0.3s, transform 0.3s;
+  }
+
+  .sidebar a:hover {
+    border-bottom-width: 2px;
+    transform: scale(1.05);
+  }
+
+  .profile-img {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .social-icon {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+</html>

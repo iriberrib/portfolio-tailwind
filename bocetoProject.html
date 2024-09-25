@@ -1,0 +1,243 @@
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Profile Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Estilos para el modo oscuro */
+    .dark-mode {
+      --bg-color: #1a202c;
+      --text-color: #cbd5e0;
+      --sidebar-bg: #2d3748;
+      --sidebar-text: #a0aec0;
+      --border-color: #4a5568;
+      --card-bg: #2d3748;
+      --card-text: #cbd5e0;
+    }
+
+    /* Custom styles for light mode */
+    .light-mode {
+      --bg-color: #f7fafc;
+      --text-color: #2d3748;
+      --sidebar-bg: #edf2f7;
+      --sidebar-text: #4a5568;
+      --border-color: #e2e8f0;
+      --card-bg: #ffffff;
+      --card-text: #2d3748;
+    }
+
+    /* Apply the custom properties */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .sidebar {
+      background-color: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .border-custom {
+      border-color: var(--border-color);
+      transition: border-color 0.3s;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      color: var(--card-text);
+      transition: background-color 0.3s, color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .badge {
+      transition: background-color 0.3s ease;
+    }
+
+    .badge:hover {
+      background-color: #333;
+    }
+
+    .sidebar a {
+      transition: border-width 0.3s, transform 0.3s;
+    }
+
+    .sidebar a:hover {
+      border-bottom-width: 2px;
+      transform: scale(1.05);
+    }
+
+    .profile-img {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icon {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes circle-out-hesitate {
+      0% {
+        clip-path: circle(125%);
+      }
+      40% {
+        clip-path: circle(40%);
+      }
+      100% {
+        clip-path: circle(0%);
+      }
+    }
+
+    @keyframes circle-in-hesitate {
+      0% {
+        clip-path: circle(0%);
+      }
+      40% {
+        clip-path: circle(40%);
+      }
+      100% {
+        clip-path: circle(125%);
+      }
+    }
+
+    [transition-style="in:circle:hesitate"] {
+      animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-hesitate both;
+    }
+
+    [transition-style="out:circle:hesitate"] {
+      animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-out-hesitate both;
+    }
+  </style>
+</head>
+
+<body class="light-mode" transition-style="in:circle:hesitate">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <div class="w-1/4 sidebar p-6 flex flex-col items-center">
+      <div class="relative">
+        <img alt="Profile picture of [Tu nombre]" class="rounded-full w-32 h-32 profile-img" src="/src/assets/profile 3.jpeg" />
+        <span class="absolute bottom-0 right-0 bg-green-500 rounded-full w-4 h-4 border-2 border-white"></span>
+      </div>
+      <nav class="mt-6 space-y-4 text-lg">
+        <a class="block" href="/src/html/indexPortfolio.html">Home</a>
+        <a class="block" href="/src/html/cv.html">CV</a>
+        <a class="block" href="../html/projects.html">Projects</a>
+        <a class="block" href="#">Blog</a>
+        <hr class="my-4 border-custom" />
+        <a class="block" href="#">Contact</a>
+      </nav>
+      <div class="mt-auto flex space-x-4">
+        <a class="text-gray-600 social-icon" href="https://github.com/iriberrib">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="text-gray-600 social-icon" href="https://www.linkedin.com/in/benjamin-iriberri/">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Main Content -->
+    <div class="w-3/4 p-8">
+      <div class="mb-8">
+        <h1 class="text-2xl font-bold mb-4">Projects Header</h1>
+        <div class="flex items-center mb-4 project-card p-4 rounded-lg">
+          <img alt="Project logo" class="w-24 h-24 bg-gray-200 rounded-lg mr-4" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-f12xx2NTpUb2WioLsRxxpgwq.png?st=2024-09-25T16%3A51%3A47Z&se=2024-09-25T18%3A51%3A47Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-24T23%3A22%3A49Z&ske=2024-09-25T23%3A22%3A49Z&sks=b&skv=2024-08-04&sig=U7kMb0n5iIpkiIxGL2DcaxqBEMEhMYLzn%2Burw%2BAu4x0%3D" width="100" />
+          <div>
+            <h2 class="text-xl font-bold">Demo Project 1 <span class="bg-black text-white text-xs px-2 py-1 rounded badge">NEW</span></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="flex items-center mb-4 project-card p-4 rounded-lg">
+          <img alt="Project logo" class="w-24 h-24 bg-gray-200 rounded-lg mr-4" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-f12xx2NTpUb2WioLsRxxpgwq.png?st=2024-09-25T16%3A51%3A47Z&se=2024-09-25T18%3A51%3A47Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-24T23%3A22%3A49Z&ske=2024-09-25T23%3A22%3A49Z&sks=b&skv=2024-08-04&sig=U7kMb0n5iIpkiIxGL2DcaxqBEMEhMYLzn%2Burw%2BAu4x0%3D" width="100" />
+          <div>
+            <h2 class="text-xl font-bold">Demo Project 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1 class="text-2xl font-bold mb-4">Projects Header</h1>
+        <div class="flex items-center mb-4 project-card p-4 rounded-lg">
+          <img alt="Project logo" class="w-24 h-24 bg-gray-200 rounded-lg mr-4" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-f12xx2NTpUb2WioLsRxxpgwq.png?st=2024-09-25T16%3A51%3A47Z&se=2024-09-25T18%3A51%3A47Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-24T23%3A22%3A49Z&ske=2024-09-25T23%3A22%3A49Z&sks=b&skv=2024-08-04&sig=U7kMb0n5iIpkiIxGL2DcaxqBEMEhMYLzn%2Burw%2BAu4x0%3D" width="100" />
+          <div>
+            <h2 class="text-xl font-bold">Demo Project 3 <span class="bg-black text-white text-xs px-2 py-1 rounded badge">FOSS</span></h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="flex items-center mb-4 project-card p-4 rounded-lg">
+          <img alt="Project logo" class="w-24 h-24 bg-gray-200 rounded-lg mr-4" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-f12xx2NTpUb2WioLsRxxpgwq.png?st=2024-09-25T16%3A51%3A47Z&se=2024-09-25T18%3A51%3A47Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-24T23%3A22%3A49Z&ske=2024-09-25T23%3A22%3A49Z&sks=b&skv=2024-08-04&sig=U7kMb0n5iIpkiIxGL2DcaxqBEMEhMYLzn%2Burw%2BAu4x0%3D" width="100" />
+          <div>
+            <h2 class="text-xl font-bold">Demo Project 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="flex items-center mb-4 project-card p-4 rounded-lg">
+          <img alt="Project logo" class="w-24 h-24 bg-gray-200 rounded-lg mr-4" height="100" src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-RcpoXHkzChYnDbFAyeQ8tamr/user-ehrvabJ3DufsCu8YJ7PqY5gl/img-f12xx2NTpUb2WioLsRxxpgwq.png?st=2024-09-25T16%3A51%3A47Z&se=2024-09-25T18%3A51%3A47Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-09-24T23%3A22%3A49Z&ske=2024-09-25T23%3A22%3A49Z&sks=b&skv=2024-08-04&sig=U7kMb0n5iIpkiIxGL2DcaxqBEMEhMYLzn%2Burw%2BAu4x0%3D" width="100" />
+          <div>
+            <h2 class="text-xl font-bold">Demo Project 5</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Boton para cambiar de modo claro a oscuro y viceversa -->
+    <button class="absolute top-4 right-4 p-2 bg-gray-300 dark:bg-gray-700 rounded-full focus:outline-none" id="theme-toggle">
+      <i class="fas fa-sun text-yellow-500" id="theme-icon"></i>
+    </button>
+  </div>
+  <script>
+    // Javascript para cambiar de tema
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        body.setAttribute('transition-style', 'out:circle:hesitate');
+        setTimeout(() => {
+          body.classList.remove('dark-mode');
+          body.classList.add('light-mode');
+          body.setAttribute('transition-style', 'in:circle:hesitate');
+        }, 1300);
+      } else {
+        body.setAttribute('transition-style', 'out:circle:hesitate');
+        setTimeout(() => {
+          body.classList.remove('light-mode');
+          body.classList.add('dark-mode');
+          body.setAttribute('transition-style', 'in:circle:hesitate');
+        }, 1300);
+      }
+
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeIcon.classList.remove('text-yellow-500');
+        themeIcon.classList.add('text-gray-300');
+      } else {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        themeIcon.classList.remove('text-gray-300');
+        themeIcon.classList.add('text-yellow-500');
+      }
+    });
+  </script>
+</body>
+</html>

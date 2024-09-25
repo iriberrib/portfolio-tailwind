@@ -1,0 +1,197 @@
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>
+    Profile Page
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Animación para la sidebar */
+    .sidebar {
+      transition: transform 0.3s ease-in-out;
+    }
+    .sidebar-hidden {
+      transform: translateX(-100%);
+    }
+    .menu-button {
+      transition: transform 0.3s ease-in-out;
+    }
+    .menu-button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body class="light-mode">
+  <div class="flex min-h-screen">
+    <!-- Botón de menú para dispositivos móviles -->
+    <button id="menuButton" class="menu-button p-2 text-gray-900 absolute top-4 left-4 lg:hidden focus:outline-none">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="w-1/4 sidebar p-6 flex flex-col items-center lg:translate-x-0 transform -translate-x-full lg:relative lg:flex lg:flex-col">
+      <div class="relative">
+        <img alt="Profile picture of [Tu nombre]" class="rounded-full w-32 h-32" src="/src/assets/profile 3.jpeg" />
+        <span class="absolute bottom-0 right-0 bg-green-500 rounded-full w-4 h-4 border-2 border-white"></span>
+      </div>
+      <nav class="mt-6 space-y-4 text-lg">
+        <a class="block" href="/src/html/indexPortfolio.html">
+          Home
+        </a>
+        <a class="block" href="/src/html/cv.html">
+          CV
+        </a>
+        <a class="block" href="#">
+          Projects
+        </a>
+        <a class="block" href="#">
+          Blog
+        </a>
+        <hr class="my-4 border-custom" />
+        <a class="block" href="#">
+          Contact
+        </a>
+      </nav>
+      <div class="mt-auto flex space-x-4">
+        <a class="text-gray-600" href="https://github.com/iriberrib">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="text-gray-600" href="https://www.linkedin.com/in/benjamin-iriberri/">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="w-3/4 p-10">
+      <div>
+        <p class="text-xl">
+          Bienvenido 👋
+        </p>
+        <h1 class="text-4xl font-bold mt-2">
+          Benjamin Iriberri
+        </h1>
+        <h2 class="text-2xl mt-1">
+          <b>QA Analyst & Lead - Support N1 at Asteroid Technologies</b>
+        </h2>
+        <p class="mt-4">
+          Me llamo Benjamin, actualmente me desempeño como QA Analyst & Lead con 3 años de experiencia.
+          Tengo conocimientos en Testing Manual y Automatizado, además de experiencia en control de calidad de software. Estoy familiarizado con los diferentes niveles de testing, que incluyen pruebas unitarias, de integración, de sistema y de aceptación. He trabajado en la creación y ejecución de planes de prueba, casos de prueba detallados, así como en la documentación de issues, bugs y el seguimiento de los mismos hasta su resolución.
+        </p>
+      </div>
+    </div>
+
+    <!-- Boton para cambiar de modo claro a oscuro y viceversa -->
+    <button class="absolute top-4 right-4 p-2 bg-gray-300 dark:bg-gray-700 rounded-full focus:outline-none" id="theme-toggle">
+      <i class="fas fa-sun text-yellow-500" id="theme-icon"></i>
+    </button>
+  </div>
+
+  <script>
+    // Javascript para cambiar de tema
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeIcon.classList.remove('text-yellow-500');
+        themeIcon.classList.add('text-gray-300');
+      } else {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        themeIcon.classList.remove('text-gray-300');
+        themeIcon.classList.add('text-yellow-500');
+      }
+    });
+
+    // Funcionalidad para mostrar/ocultar la sidebar en pantallas pequeñas
+    const sidebar = document.getElementById('sidebar');
+    const menuButton = document.getElementById('menuButton');
+
+    menuButton.addEventListener('click', () => {
+      // Si la sidebar está oculta, la mostramos; si está visible, la ocultamos.
+      if (sidebar.classList.contains('-translate-x-full')) {
+        sidebar.classList.remove('-translate-x-full');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+      }
+    });
+  </script>
+</body>
+
+<style>
+  /* Estilos para el modo oscuro */
+  .dark-mode {
+    --bg-color: #1a202c;
+    --text-color: #cbd5e0;
+    --sidebar-bg: #2d3748;
+    --sidebar-text: #a0aec0;
+    --border-color: #4a5568;
+  }
+
+  /* Custom styles for light mode */
+  .light-mode {
+    --bg-color: #f7fafc;
+    --text-color: #2d3748;
+    --sidebar-bg: #edf2f7;
+    --sidebar-text: #4a5568;
+    --border-color: #e2e8f0;
+  }
+
+  /* Apply the custom properties */
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  .sidebar {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+  }
+
+  .border-custom {
+    border-color: var(--border-color);
+  }
+
+  /* Animaciones */
+  .sidebar a {
+    transition: border-width 0.3s, transform 0.3s;
+  }
+
+  .sidebar a:hover {
+    border-bottom-width: 2px;
+    transform: scale(1.05);
+  }
+
+  .profile-img {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .social-icon {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+</html>
