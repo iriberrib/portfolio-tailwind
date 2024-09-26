@@ -1,26 +1,10 @@
 /* Estilos para el modo oscuro */
 .dark-mode {
-  @keyframes circle-in-hesitate {
-    0% {
-      clip-path: circle(0%);
-    }
-    40% {
-      clip-path: circle(40%);
-    }
-    100% {
-      clip-path: circle(125%);
-    }
-  }
-  
-  [transition-style="in:circle:hesitate"] {
-    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-hesitate both;
-    --bg-color: #1a202c;
-    --text-color: #cbd5e0;
-    --sidebar-bg: #2d3748;
-    --sidebar-text: #a0aec0;
-    --border-color: #4a5568;
-  }
-  
+  --bg-color: #1a202c;
+  --text-color: #cbd5e0;
+  --sidebar-bg: #2d3748;
+  --sidebar-text: #a0aec0;
+  --border-color: #4a5568;
 }
 
 /* Custom styles for light mode */
@@ -49,7 +33,7 @@ body {
 
 /* Animations */
 .sidebar a {
-  transition: border-width 0.3s, transform 0.3s;
+  @apply transition-all ease-in-out duration-300;
 }
 
 .sidebar a:hover {
@@ -57,17 +41,17 @@ body {
   transform: scale(1.05);
 }
 
-.profile-img {
-  transition: transform 0.3s, box-shadow 0.3s;
+.rounded-full {
+  @apply transition-all ease-in-out duration-300;
 }
 
-.profile-img:hover {
+.rounded-full:hover {
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .social-icon {
-  transition: transform 0.3s, box-shadow 0.3s;
+  @apply transition-all ease-in-out duration-300;
 }
 
 .social-icon:hover {
