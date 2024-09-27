@@ -99,6 +99,10 @@
       color: var(--text-color);
     }
 
+    .skills-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     /* Responsive styles */
     @media (max-width: 768px) {
       .skills-grid {
@@ -225,7 +229,7 @@
 
       <!-- Sección de tecnologías -->
       <h2 class="text-2xl font-bold my-6">Skills</h2>
-      <div class="skills-grid grid grid-cols-3 gap-4">
+      <div class="skills-grid grid">
         <div class="skill-card">
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
           <p>HTML</p>
