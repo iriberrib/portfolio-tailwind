@@ -1,12 +1,10 @@
-<!-- Codigo para todas las paginas -->
-
-<html lang="es"></html>
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>
-    Cypress Project
+    QA Analyst - Benjamin Iriberri
   </title>
   <script src="https://cdn.tailwindcss.com">
   </script>
@@ -18,22 +16,19 @@
     <!-- Sidebar -->
     <div class="w-1/4 sidebar p-6 flex flex-col items-center">
       <div class="relative">
-        <img alt="Profile picture of [Tu nombre]" class="rounded-full w-32 h-32" src="/src/assets/profile 3.jpeg" />
+        <img alt="Profile picture" class="rounded-full w-32 h-32" src="assets/profile 3.jpeg" />
         <span class="absolute bottom-0 right-0 bg-green-500 rounded-full w-4 h-4 border-2 border-white">
         </span>
       </div>
       <nav class="mt-6 space-y-4 text-lg">
-        <a class="block" href="/src/html/index.html">
+        <a class="block" href="index.html">
           Home
         </a>
-        <a class="block" href="/src/html/cv.html">
+        <a class="block" href="cv.html">
           CV
         </a>
-        <a class="block" href="../projects.html">
+        <a class="block" href="projects.html">
           Projects
-        </a>
-        <a class="block" href="#">
-          Blog
         </a>
         <hr class="my-4 border-custom" />
         <a class="block" href="#">
@@ -52,7 +47,24 @@
       </div>
     </div>
     <!-- Main Content -->
-    
+    <div class="w-3/4 p-10">
+      <div>
+        <p class="text-xl">
+          Bienvenido 👋
+        </p>
+        <h1 class="text-4xl font-bold mt-2">
+          Benjamin Iriberri
+        </h1>
+        <h2 class="text-2xl mt-1">
+          <b>QA Analyst & Lead - Support N1 at <span style="color: rgb(255, 94, 0);">Asteroid Technologies</span></b>
+        </h2>
+        <p class="mt-4">
+          Me llamo Benjamin, actualmente me desempeño como QA Analyst & Lead con 3 años de experiencia.
+          Tengo conocimientos en Testing Manual y Automatizado, además de experiencia en control de calidad de software. Estoy familiarizado con los diferentes niveles de testing, que incluyen pruebas unitarias, de integración, de sistema y de aceptación. He trabajado en la creación y ejecución de planes de prueba, casos de prueba detallados, así como en la documentación de issues, bugs y el seguimiento de los mismos hasta su resolución.
+        </p>
+      </div>
+    </div>
+  
     <!-- Boton para cambiar de modo claro a oscuro y viceversa -->
     <button class="absolute top-4 right-4 p-2 bg-gray-300 dark:bg-gray-700 rounded-full focus:outline-none"
       id="theme-toggle">
@@ -84,7 +96,6 @@
     });
   </script>
 </body>
-
 <style>
   /* Estilos para el modo oscuro */
   .dark-mode {
@@ -129,11 +140,11 @@
     transform: scale(1.05);
   }
 
-  .profile-img {
+  .rounded-full {
     transition: transform 0.3s, box-shadow 0.3s;
   }
 
-  .profile-img:hover {
+  .rounded-full:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
@@ -147,5 +158,4 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   }
 </style>
-
 </html>
