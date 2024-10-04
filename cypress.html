@@ -49,6 +49,131 @@
       </div>
     </div>
     <!-- Main Content -->
+    <div class="w-3/4 p-10">
+      <div>
+        <p class="text-xl">
+          Web Automation Testing Project with
+        </p>
+        <h1 class="text-4xl font-bold mt-2">
+          <span style="color:#3ccd41">
+            Cypress
+          </span>
+        </h1>
+        <h2 class="text-2xl mt-1">
+          <b>
+            Developed for
+            <span style="color: rgb(0, 121, 242);">
+              Guarnic
+            </span>
+          </b>
+        </h2>
+        <p class="mt-4">
+          En el proyecto de automation testing para la PWA de la empresa
+          <span style="color:rgb(0, 121, 242)">
+            <b>
+              Guarnic 
+            </b>
+          </span>
+          Este proyecto implementa un framework de automatización de pruebas end-to-end utilizando Cypress, una herramienta moderna y eficiente para 
+          la ejecución de pruebas en aplicaciones web.
+        </p>
+        <video autoplay loop muted>
+          <source src="./assets/smoke.cy.js.mp4">
+        </video>
+        <h2 class="text-2xl mt-1">
+          <b>
+            Tecnologias implementadas
+          </b>
+        </h2>
+        <div class="flex flex-wrap gap-4 mt-6">
+          <div class="skill-card">
+            <img alt="Playwright"
+              src="assets/cypress.svg" />
+            <p>
+              Cypress
+            </p>
+            <p class="skill-level">
+              Avanzado
+            </p>
+          </div>
+          <div class="skill-card">
+            <img alt="Allure Report"
+              src="/assets/allure.png" />
+            <p>
+              Allure Report
+            </p>
+            <p class="skill-level">
+              Intermedio
+            </p>
+          </div>
+          <div class="skill-card">
+            <img alt="Node.js" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+            <p>
+              Node.js
+            </p>
+            <p class="skill-level">
+              Avanzado
+            </p>
+          </div>
+          <div class="skill-card">
+            <img alt="Git" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+            <p>
+              Git
+            </p>
+            <p class="skill-level">
+              Avanzado
+            </p>
+          </div>
+          <div class="skill-card">
+            <img alt="GitHub" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+            <p>
+              GitHub
+            </p>
+            <p class="skill-level">
+              Avanzado
+            </p>
+          </div>
+          <div class="skill-card">
+            <img alt="TypeScript"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
+            <p>
+              TypeScript
+            </p>
+            <p class="skill-level">
+              Intermedio
+            </p>
+          </div>
+          <p class="mt-4">
+            Para el manejo de reportes, se integró la librería
+            <span style="color:rgb(159, 74, 255)">
+              <b>
+                allure-report, 
+              </b>
+            </span> 
+            que proporciona reportes detallados sobre la ejecución de las pruebas, incluyendo capturas de pantalla, métricas y 
+            los pasos realizados, lo que facilita el análisis y la identificación de fallas en el sistema. Además, se utilizó 
+            <span style="color:rgb(255, 111, 0)">
+              <b>
+                Git 
+              </b>
+            </span>
+            para el control de versiones, y 
+            <span style="color:rgb(29, 51, 76)">
+              <b>
+                GitHub 
+              </b>
+            </span>
+            como plataforma de colaboración, lo que permitió un flujo de trabajo eficiente y un manejo robusto del historial de cambios. El proyecto se ejecutó en un entorno basado en 
+            <span style="color:rgb(36, 218, 8)">
+              <b>
+                Node.js, 
+              </b>
+            </span> 
+            aprovechando su ecosistema y la capacidad de ejecutar pruebas de manera rápida y eficiente en múltiples entornos.
+          </p>
+        </div>
+      </div>
+    </div>
     
     <!-- Boton para cambiar de modo claro a oscuro y viceversa -->
     <button class="absolute top-4 right-4 p-2 bg-gray-300 dark:bg-gray-700 rounded-full focus:outline-none"
@@ -110,66 +235,101 @@
 </body>
 
 <style>
-  /* Estilos para el modo oscuro */
-  .dark-mode {
-    --bg-color: #1a202c;
-    --text-color: #cbd5e0;
-    --sidebar-bg: #2d3748;
-    --sidebar-text: #a0aec0;
-    --border-color: #4a5568;
-  }
+ /* Estilos para el modo oscuro */
+ .dark-mode {
+  --bg-color: #1a202c;
+  --text-color: #cbd5e0;
+  --sidebar-bg: #2d3748;
+  --sidebar-text: #a0aec0;
+  --border-color: #4a5568;
+}
 
-  /* Custom styles for light mode */
-  .light-mode {
-    --bg-color: #f7fafc;
-    --text-color: #2d3748;
-    --sidebar-bg: #edf2f7;
-    --sidebar-text: #4a5568;
-    --border-color: #e2e8f0;
-  }
+/* Custom styles for light mode */
+.light-mode {
+  --bg-color: #f7fafc;
+  --text-color: #2d3748;
+  --sidebar-bg: #edf2f7;
+  --sidebar-text: #4a5568;
+  --border-color: #e2e8f0;
+}
 
-  /* Apply the custom properties */
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
+/* Apply the custom properties */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
 
-  .sidebar {
-    background-color: var(--sidebar-bg);
-    color: var(--sidebar-text);
-  }
+.sidebar {
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+}
 
-  .border-custom {
-    border-color: var(--border-color);
-  }
+.border-custom {
+  border-color: var(--border-color);
+}
 
-  /* Animations */
-  .sidebar a {
-    transition: border-width 0.3s, transform 0.3s;
-  }
+/* Animations */
+.sidebar a {
+  transition: border-width 0.3s, transform 0.3s;
+}
 
-  .sidebar a:hover {
-    border-bottom-width: 2px;
-    transform: scale(1.05);
-  }
+.sidebar a:hover {
+  border-bottom-width: 2px;
+  transform: scale(1.05);
+}
 
-  .profile-img {
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+.profile-img {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  .profile-img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
+.profile-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
-  .social-icon {
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+.social-icon {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  .social-icon:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
+.social-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
+}
+
+.skill-level {
+  font-size: 0.75rem;
+  color: var(--text-color);
+}
 </style>
 
 </html>
