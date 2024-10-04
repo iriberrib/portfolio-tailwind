@@ -184,22 +184,49 @@
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
 
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      body.classList.toggle('light-mode');
-
-      if (body.classList.contains('dark-mode')) {
+    // Cargar el tema guardado en localStorage
+    function loadTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        body.classList.remove('light-mode');
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
         themeIcon.classList.remove('text-yellow-500');
         themeIcon.classList.add('text-gray-300');
       } else {
+        body.classList.add('light-mode');
+        body.classList.remove('dark-mode');
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
         themeIcon.classList.remove('text-gray-300');
         themeIcon.classList.add('text-yellow-500');
       }
+    }
+
+    // Cambiar el tema y guardar la preferencia en localStorage
+    themeToggle.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        themeIcon.classList.remove('text-gray-300');
+        themeIcon.classList.add('text-yellow-500');
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeIcon.classList.remove('text-yellow-500');
+        themeIcon.classList.add('text-gray-300');
+        localStorage.setItem('theme', 'dark');
+      }
     });
+
+    // Cargar el tema al iniciar la página
+    loadTheme();
   </script>
   <style>
     /* Estilos para el modo oscuro */

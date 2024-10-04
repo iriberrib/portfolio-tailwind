@@ -1,161 +1,223 @@
 <html lang="es">
-
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>
     QA Analyst - Benjamin Iriberri
   </title>
-  <script src="https://cdn.tailwindcss.com">
-  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Estilos para el modo oscuro */
+    .dark-mode {
+      --bg-color: #1a202c;
+      --text-color: #cbd5e0;
+      --sidebar-bg: #2d3748;
+      --sidebar-text: #a0aec0;
+      --border-color: #4a5568;
+      --card-bg: #2d3748;
+      --card-text: #cbd5e0;
+    }
+
+    /* Estilos para el modo claro */
+    .light-mode {
+      --bg-color: #f7fafc;
+      --text-color: #2d3748;
+      --sidebar-bg: #edf2f7;
+      --sidebar-text: #4a5568;
+      --border-color: #e2e8f0;
+      --card-bg: #ffffff;
+      --card-text: #2d3748;
+    }
+
+    /* Aplicar las propiedades personalizadas */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .sidebar {
+      background-color: var(--sidebar-bg);
+      color: var(--sidebar-text);
+    }
+
+    .border-custom {
+      border-color: var(--border-color);
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      color: var(--card-text);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .badge {
+      transition: background-color 0.3s ease;
+    }
+
+    .badge:hover {
+      background-color: #333;
+    }
+
+    .sidebar a {
+      transition: border-width 0.3s, transform 0.3s;
+    }
+
+    .sidebar a:hover {
+      border-bottom-width: 2px;
+      transform: scale(1.05);
+    }
+
+    .profile-img {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icon {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 
-<body class="light-mode">
+<body>
   <div class="flex min-h-screen">
     <!-- Sidebar -->
     <div class="w-1/4 sidebar p-6 flex flex-col items-center">
       <div class="relative">
         <img alt="Profile picture" class="rounded-full w-32 h-32" src="assets/profile 3.jpeg" />
-        <span class="absolute bottom-0 right-0 bg-green-500 rounded-full w-4 h-4 border-2 border-white">
-        </span>
+        <span class="absolute bottom-0 right-0 bg-green-500 rounded-full w-4 h-4 border-2 border-white"></span>
       </div>
       <nav class="mt-6 space-y-4 text-lg">
-        <a class="block" href="index.html">
-          Home
-        </a>
-        <a class="block" href="cv.html">
-          CV
-        </a>
-        <a class="block" href="projects.html">
-          Projects
-        </a>
+        <a class="block" href="index.html">Home</a>
+        <a class="block" href="cv.html">CV</a>
+        <a class="block" href="projects.html">Projects</a>
         <hr class="my-4 border-custom" />
-        <a class="block" href="#">
-          Contact
-        </a>
+        <a class="block" href="#">Contact</a>
       </nav>
       <div class="mt-auto flex space-x-4">
-        <a class="text-gray-600" href="https://github.com/iriberrib">
-          <i class="fab fa-github">
-          </i>
-        </a>
-        <a class="text-gray-600" href="https://www.linkedin.com/in/benjamin-iriberri/">
-          <i class="fab fa-linkedin">
-          </i>
-        </a>
+        <a class="text-gray-600" href="https://github.com/iriberrib"><i class="fab fa-github"></i></a>
+        <a class="text-gray-600" href="https://www.linkedin.com/in/benjamin-iriberri/"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
+    
     <!-- Main Content -->
     <div class="w-3/4 p-10">
       <div>
-        <p class="text-xl">
-          Bienvenido 👋
-        </p>
-        <h1 class="text-4xl font-bold mt-2">
-          Benjamin Iriberri
-        </h1>
+        <p class="text-xl">Bienvenido 👋</p>
+        <h1 class="text-4xl font-bold mt-2">Benjamin Iriberri</h1>
         <h2 class="text-2xl mt-1">
           <b>QA Analyst & Lead - Support N1 at <span style="color: rgb(255, 94, 0);">Asteroid Technologies</span></b>
         </h2>
-        <p class="mt-4">
-          Me llamo Benjamin, actualmente me desempeño como QA Analyst & Lead con 3 años de experiencia.
-          Tengo conocimientos en Testing Manual y Automatizado, además de experiencia en control de calidad de software. Estoy familiarizado con los diferentes niveles de testing, que incluyen pruebas unitarias, de integración, de sistema y de aceptación. He trabajado en la creación y ejecución de planes de prueba, casos de prueba detallados, así como en la documentación de issues, bugs y el seguimiento de los mismos hasta su resolución.
-        </p>
+        <p class="mt-4">Tengo conocimientos en testing manual y automation, testing funcional y no funcional. Estoy familiarizado con los diferentes niveles de testing, 
+          que incluyen pruebas unitarias, de integración, de sistema y de aceptación. He trabajado en la creación y ejecución de planes de prueba, casos de prueba detallados, 
+          así como en la documentación de issues, bugs y el seguimiento de los mismos hasta su resolución. En cuanto a enfoques de prueba, me manejo con testing de caja negra y de caja blanca, 
+          aplicando técnicas que me permiten garantizar la calidad del software en diferentes etapas del desarrollo.</p>
+      </div>
+      <div class="mb-8">
+        <h1 class="text-2xl font-bold mb-4">Web Automation Projects</h1>
+        <div class="flex items-center mb-4 project-card p-4 rounded-lg">
+          <img alt="Project logo" class="w-24 h-24 bg-gray-200 rounded-lg mr-4" height="100" src="../assets/projects/plawrightproject2.png" width="100" />
+          <div>
+            <a href="playwright.html">
+              <h2 class="text-xl font-bold">Web Automation with <span style="color:#f49a23">Playwright</span></h2>
+            </a>
+            <p>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">Playwright</span>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">Web</span>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">Automation</span>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">allure-report</span>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">TypeScript</span>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">npm</span>
+            </p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="flex items-center mb-4 project-card p-4 rounded-lg">
+          <img alt="Project logo" class="w-24 h-24 bg-gray-200 rounded-lg mr-4" height="100" src="../assets/projects/cypressproject.png" width="100" />
+          <div>
+            <a href="./projects/cypress.html">
+              <h2 class="text-xl font-bold">Web Automation with <span style="color:#2a9336">Cypress</span></h2>
+            </a>
+            <p>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">Cypress</span>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">Web</span>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">Automation</span>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">JavaScript</span>
+              <span class="bg-black text-white text-xs px-2 py-1 rounded badge">npm</span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  
-    <!-- Boton para cambiar de modo claro a oscuro y viceversa -->
-    <button class="absolute top-4 right-4 p-2 bg-gray-300 dark:bg-gray-700 rounded-full focus:outline-none"
-      id="theme-toggle">
-      <i class="fas fa-sun text-yellow-500" id="theme-icon">
-      </i>
+
+    <!-- Botón para cambiar de modo claro a oscuro y viceversa -->
+    <button class="absolute top-4 right-4 p-2 bg-gray-300 dark:bg-gray-700 rounded-full focus:outline-none" id="theme-toggle">
+      <i class="fas fa-sun text-yellow-500" id="theme-icon"></i>
     </button>
   </div>
+
   <script>
-    // Javascript para cambiar de tema
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
 
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      body.classList.toggle('light-mode');
-
-      if (body.classList.contains('dark-mode')) {
+    // Cargar el tema guardado en localStorage
+    function loadTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        body.classList.remove('light-mode');
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
         themeIcon.classList.remove('text-yellow-500');
         themeIcon.classList.add('text-gray-300');
       } else {
+        body.classList.add('light-mode');
+        body.classList.remove('dark-mode');
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
         themeIcon.classList.remove('text-gray-300');
         themeIcon.classList.add('text-yellow-500');
       }
+    }
+
+    // Cambiar el tema y guardar la preferencia en localStorage
+    themeToggle.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        themeIcon.classList.remove('text-gray-300');
+        themeIcon.classList.add('text-yellow-500');
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        themeIcon.classList.remove('text-yellow-500');
+        themeIcon.classList.add('text-gray-300');
+        localStorage.setItem('theme', 'dark');
+      }
     });
+
+    // Cargar el tema al iniciar la página
+    loadTheme();
   </script>
 </body>
-<style>
-  /* Estilos para el modo oscuro */
-  .dark-mode {
-    --bg-color: #1a202c;
-    --text-color: #cbd5e0;
-    --sidebar-bg: #2d3748;
-    --sidebar-text: #a0aec0;
-    --border-color: #4a5568;
-  }
-
-  /* Custom styles for light mode */
-  .light-mode {
-    --bg-color: #f7fafc;
-    --text-color: #2d3748;
-    --sidebar-bg: #edf2f7;
-    --sidebar-text: #4a5568;
-    --border-color: #e2e8f0;
-  }
-
-  /* Apply the custom properties */
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
-
-  .sidebar {
-    background-color: var(--sidebar-bg);
-    color: var(--sidebar-text);
-  }
-
-  .border-custom {
-    border-color: var(--border-color);
-  }
-
-  /* Animations */
-  .sidebar a {
-    transition: border-width 0.3s, transform 0.3s;
-  }
-
-  .sidebar a:hover {
-    border-bottom-width: 2px;
-    transform: scale(1.05);
-  }
-
-  .rounded-full {
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .rounded-full:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .social-icon {
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .social-icon:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  }
-</style>
 </html>
